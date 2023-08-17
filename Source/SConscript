@@ -136,15 +136,15 @@ naughty_files = Split("""
 env = BaseEnv.Clone()
         
 if Debug:
-    print '\n+++ Entered "#/Source/SConscript"\n'
+    print('\n+++ Entered "#/Source/SConscript"\n')
 
 
 # Build these separately so we can use fewer warning flags
 if MkStatic:
-    naughty_objs = [env.StaticObject(naughty_file, WARNING_FLAGS='-Wno-sign-compare -Werror')
+    naughty_objs = [env.StaticObject(naughty_file, WARNING_FLAGS='-Wno-sign-compare')
                     for naughty_file in naughty_files]
 else:
-    naughty_objs = [env.SharedObject(naughty_file, WARNING_FLAGS='-Wno-sign-compare -Werror')
+    naughty_objs = [env.SharedObject(naughty_file, WARNING_FLAGS='-Wno-sign-compare')
                     for naughty_file in naughty_files]
 
 

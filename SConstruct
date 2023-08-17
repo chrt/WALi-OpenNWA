@@ -19,8 +19,8 @@ elif platform.machine() == 'x86_64':
 elif platform.machine() == 'AMD64':
    platform_bits = 64
 else:
-    print "Warning: Check platform_bits for machine type", platform.machine()
-    print "         Assuming 32"
+    print("Warning: Check platform_bits for machine type", platform.machine())
+    print("         Assuming 32")
     platform_bits = 32
 
 
@@ -198,13 +198,13 @@ if 'Darwin' == Platform and not MkStatic:
    BaseEnv.Append(SHLINKFLAGS='-Wl,-install_name,%s/${TARGET.file}'%LibInstallDir)
 
 if Debug:
-    print "\n+++ SConstruct setup"
-    print "+ %20s : '%s'" % ('WaliDir',WaliDir)
-    print "+ %20s : '%s'" % ('LibInstallDir',LibInstallDir)
+    print("\n+++ SConstruct setup")
+    print("+ %20s : '%s'" % ('WaliDir',WaliDir))
+    print("+ %20s : '%s'" % ('LibInstallDir',LibInstallDir))
     for f in ['CC','CXX','CFLAGS','CCFLAGS','CXXFLAGS','CPPPATH','SHLINKFLAGS']:
-        print "+ %20s : '%s'" % (f,BaseEnv[f])
-    print "+ %20s : '%s'" % ('optimize', optimize)
-    print "+ %20s : '%s'" % ('CheckedLevel', CheckedLevel)
+        print("+ %20s : '%s'" % (f,BaseEnv[f]))
+    print("+ %20s : '%s'" % ('optimize', optimize))
+    print("+ %20s : '%s'" % ('CheckedLevel', CheckedLevel))
 
 
 Export('Debug')
@@ -271,7 +271,7 @@ if 'help' not in COMMAND_LINE_TARGETS:
             BaseEnv.Alias('bindings',built)
 else:
     BaseEnv.Alias('help',[])
-    print """
+    print("""
     scons [all addons examples tests bindings]
-    """
+    """)
 
